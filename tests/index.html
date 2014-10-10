@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Image Manipulation Sandbox</title>
+  <!-- Bootstrap: Latest compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<div>
+	<button id="invertButton">Invert</button>
+	<button id="rotateButton">Rotate</button>
+	<button id="greyscaleButton">Greyscale</button>
+	<button id="rootsButton">Roots Example</button>
+	<button id="isolateButton">Isolate Red</button>
+	<button id="restoreButton">Restore</button>
+	<button id="nextButton">Next Image</button>
+	<button id="setWidthButton">Set width</button>
+</div>
+<div>
+	<canvas id="myCanvas" width="100" height="100">Your browser doesn't support the canvas tag.</canvas>
+	<img src="./images/OceanSunset.png" id="myImage">
+</div>	
+<button id="testoButton">Test!</button>
+<div>
+	<canvas id="testoCanvas"></canvas>
+</div>
+<div>
+	<canvas id="testoCanvas2"></canvas>
+</div>
+
+	<!-- jQuery: Minified -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+	<!-- Bootstrap: Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<script src="dft.js"></script>
+	<script src="main.js"></script>
+
+</body>
+</html>

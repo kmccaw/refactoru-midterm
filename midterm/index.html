@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Functional Pixel Transformations</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div id="gallery-column" class="col-sm-6 col-md-7 col-lg-8">
+			<!-- Input Gallery -->
+			<div id="input-gallery" class="image-gallery well">
+				<ul class="pager">
+				  <li class="previous">
+						<a href="#">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+					</li>
+					<li class="next">
+						<a href="#">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</li>
+				</ul>
+				<h3 class="text-center gallery-header">Original Image</h3>
+				<p class="text-center">
+					<a id="set-width-anchor" role="button" class="btn btn-xs btn-default" href="#">Set Resolution Width</a>
+				</p>
+				<canvas id="input-display-canvas" class="display-canvas center-block" width="10" height="10"></canvas>
+
+				<!-- utitlity image/canvas elements -->
+				<canvas id="input-storage-canvas" class="hidden storage-canvas" width="10" height="10"></canvas>
+				<img id="source-image" class="hidden" src="">
+			</div>
+			<!-- Output gallery -->
+			<div id="output-gallery" class="image-gallery well">
+				<h3 class="text-center">Transformed Image</h1>
+				<canvas id="output-display-canvas" class="display-canvas" width="10" height="10"></canvas>
+				
+				<!-- utitlity image/canvas elements -->
+				<canvas id="output-storage-canvas" class="hidden storage-canvas" width="10" height="10"></canvas>
+			</div>
+		</div>
+		<div id="controls-column" class="col-sm-6 col-md-5 col-lg-4">
+			<ul class="nav nav-pills nav-justified" role="tablist">
+				<li class="active"><a href="#">Functional Processing</a></li>
+				<li><a href="#">DFT Processing</a></li>
+			</ul>
+			<div class="well user-controls-well" id="user-controls-well">
+				<!-- Function Processing control pane -->
+				<div class="user-controls" id="functional-controls-group">
+					<form role="form">
+						<div class="form-group">
+							<label class="control-label" for="global-variable-textarea">Global declarations:</label>
+							<textarea id="global-variable-textarea" rows="4" class="form-control"></textarea>
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="pixel-scope-textarea">Pixel Scope varibale declarations:</label>
+							<textarea id="pixel-scope-textarea" rows="4" class="form-control"></textarea>
+						</div>
+
+					</form>
+				</div>
+
+				<!-- DFT control pane -->
+				<div class="user-controls hidden" id="dft-controls-group">
+					<span>DFT</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="main.js"></script>
+
+</body>
+</html>

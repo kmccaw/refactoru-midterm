@@ -1,0 +1,43 @@
+body {
+  padding-top: 3%;
+  background-color: #999999;
+}
+.image-gallery {
+  overflow: hidden;
+  position: relative;
+  background-color: #eeeeee;
+}
+.pager {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  margin: 0px 0px 10px 0px;
+}
+.pager li a {
+  background-color: #333333;
+  color: #ffffff;
+}
+.pager li a:hover {
+  background-color: #ffffff;
+  color: #333333;
+}
+.nav-pills a {
+  vertical-align: middle;
+  font-weight: bold;
+  color: #333333;
+}
+.nav-pills li.active a {
+  vertical-align: middle;
+  font-weight: bold;
+  background-color: #333333;
+  color: #ffffff;
+}
+.nav-pills li.active a:hover {
+  background-color: #333333;
+}
+.gallery-header {
+  margin: 5px 0px 10px 0px;
+}
+.user-controls-well {
+  margin: 10px 0;
+}
