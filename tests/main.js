@@ -280,22 +280,18 @@ $(document).on('ready', function() {
 		console.log("duration:", duration);
 		var gain = function(u,v,dft)
 		{
-			var output,radius,pow;
+			var outputPower,radius,pow;
 			radius = Math.pow(
 				Math.pow(1-(u / dft.width), 2) + Math.pow(1-(v / dft.height), 2),
 				0.5);
 			pow = dft.power._[u][v];
-			outputPower = (u > (0.15 * dft.width) || v > (0.15 * dft.height)) ? 0 : pow;
-			// var outputPower = (pow > 0.5) ? (pow > 10 ? 10 : pow) : 0;
-			// plot | f(t) = 0.2+5/(1+e^(-8 (-0.5+t))) | t = 0 to sqrt(2)
-			// var outputPower = (u === 0 && v === 0) ? dft.power._[u][v]:
-			// 	(-0.289931 + 5 / (1+Math.exp(8*(-0.5 + radius)))) * dft.power._[u][v];
-			// if (u < 0.3*dft.width && v < 0.3*dft.height)
-			// 	outputPower = pow;
-			// else
-			// 	outputPower = 0;
-			// var outputPower = (radius < 0.7) ? 2*pow : Math.floor(0.01 * pow);
-			return outputPower;
+
+			// low pass
+			// outputPower = (u + v < 200) ? 0 : pow;
+
+			// repair goofy
+			// outputPower = (u > 2 && u < 8 && v < 2) ? 0 : pow;
+			return outputPower || pow;
 		}
 		var gainedDFTs = {
 			r: myDFTs.r.transformPowers(gain),
