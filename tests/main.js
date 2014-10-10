@@ -173,13 +173,17 @@ $(document).on('ready', function() {
 				Math.pow(1-(u / dft.width), 2) + Math.pow(1-(v / dft.height), 2),
 				0.5);
 			pow = dft.power._[u][v];
+			outputPower = pow;
 
-			// low pass
+			// linear low pass
 			// outputPower = (u + v < 200) ? 0 : pow;
 
+			// elliptical high pass
+			// outputPower = (radius < 1.05) ? 0 : pow;
+					
 			// repair goofy
-			// outputPower = (u > 2 && u < 8 && v < 2) ? 0 : pow;
-			return outputPower || pow;
+			// outputPower = (u > 1 && u < 12 && v < 2) ? 0 : pow;
+			return outputPower;
 		}
 		var gainedDFTs = {
 			r: myDFTs.r.transformPowers(gain),
