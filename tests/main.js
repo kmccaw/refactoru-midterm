@@ -182,7 +182,7 @@ $(document).on('ready', function() {
 			// outputPower = (radius < 1.05) ? 0 : pow;
 					
 			// repair goofy
-			// outputPower = (u > 1 && u < 12 && v < 2) ? 0 : pow;
+			outputPower = (u > 1 && u < 12 && v < 2) ? 0 : pow;
 			return outputPower;
 		}
 		var gainedDFTs = {
